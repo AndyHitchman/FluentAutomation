@@ -33,6 +33,7 @@ namespace FluentAutomation
             {
                 container.Register<ICommandProvider, CommandProvider>();
                 container.Register<IExpectProvider, ExpectProvider>();
+                container.Register<ICaptureProvider, CaptureProvider>();
                 container.Register<IFileStoreProvider, LocalFileStoreProvider>();
             
                 switch (SeleniumWebDriver.SelectedBrowser)

@@ -53,6 +53,7 @@ namespace FluentAutomation.Interfaces
         void Wait(int seconds);
         void Wait(TimeSpan timeSpan);
 
+        CaptureSyntaxProvider Capture { get; }
         ExpectSyntaxProvider Expect { get; }
     }
 }

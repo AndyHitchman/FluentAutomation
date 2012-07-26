@@ -54,5 +54,23 @@ namespace FluentAutomation.Tests.Native
         {
             this.interactive.ASPNETAJAXHover();
         }
+
+        [Fact]
+        public void CaptureTextInHeader()
+        {
+            this.capture.CaptureTextFromHeader();
+        }
+
+        [Fact]
+        public void CaptureValueInInput()
+        {
+            this.capture.CaptureValueFromInput();
+        }
+
+        [Fact]
+        public void CaptureTextInCheckboxGroup()
+        {
+            this.capture.CaptureTextFromCheckboxGroup();
+        }
     }
 }

@@ -12,11 +12,13 @@ namespace FluentAutomation
     {
         private readonly ICommandProvider commandProvider = null;
         private readonly IExpectProvider expectProvder = null;
+        private readonly ICaptureProvider captureProvider = null;
 
-        public ActionSyntaxProvider(ICommandProvider commandProvider, IExpectProvider expectProvider)
+        public ActionSyntaxProvider(ICommandProvider commandProvider, IExpectProvider expectProvider, ICaptureProvider captureProvider)
         {
             this.commandProvider = commandProvider;
             this.expectProvder = expectProvider;
+            this.captureProvider = captureProvider;
         }
 
         #region Direct Execution Actions
@@ -369,6 +371,20 @@ namespace FluentAutomation
                 }
 
                 return this.expect;
+            }
+        }
+
+        private CaptureSyntaxProvider capture = null;
+        public CaptureSyntaxProvider Capture
+        {
+            get
+            {
+                if (this.capture == null)
+                {
+                    this.capture = new CaptureSyntaxProvider(this.captureProvider);
+                }
+
+                return this.capture;
             }
         }
 
